@@ -1,0 +1,42 @@
+{
+  "input": "kvcache_data/narrativeqa_sample_0.safetensors",
+  "num_selected": 1,
+  "num_ok": 1,
+  "num_skipped": 0,
+  "total_original_bytes": 16384,
+  "total_compressed_bytes": 12376,
+  "total_ratio": 0.75537109375,
+  "total_compress_ms_sum": 0.260487,
+  "avg_compress_ms": 0.260487,
+  "avg_compress_speed_mib_s": 59.9838,
+  "wall_time_ms": 8.760932134464383,
+  "wall_speed_mib_s": 1.7834860218278892,
+  "results": [
+    {
+      "tensor": "decode.step_0.layer_0.key",
+      "status": "ok",
+      "orig_shape": [
+        1,
+        8,
+        1,
+        128
+      ],
+      "packed_shape": [
+        64,
+        128
+      ],
+      "orig_rows": 8,
+      "orig_cols": 128,
+      "dtype": "torch.bfloat16",
+      "gpu": 1,
+      "blob": "/mnt/sda1/yxz/kvcache_compression/zipserv_kvcache_framework/kvcache_data/zipserv_blobs/decode_step_0_layer_0_key.zskv",
+      "original_bytes": 16384,
+      "compressed_bytes": 12376,
+      "ratio": 0.755371,
+      "compress_ms": 0.260487,
+      "compress_speed_mib_s": 59.9838,
+      "high_freq_count": 7168,
+      "full_count": 1024
+    }
+  ]
+}

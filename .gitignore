@@ -1,5 +1,0 @@
-__pycache__/
-*.pyc
-.zipserv_tmp*/
-kvcache_data/zipserv_blobs/
-.DS_Store
