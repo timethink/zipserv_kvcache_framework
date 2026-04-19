@@ -24,6 +24,8 @@
 
 - compress_framework.py
   - 对 safetensors 中 KV 张量做并行压缩，输出 zskv blob 和 manifest。
+- decompress_framework.py
+  - 从 zskv blob + manifest 解压恢复 KV 张量并回写 safetensors，可做 bit-exact 校验。
 - roundtrip_framework.py
   - 对 KV 张量执行压缩/解压回环并验证 bit-exact。
 
@@ -46,7 +48,14 @@ python zipserv_kvcache_framework/roundtrip_framework.py \
   --max-tensors 1 \
   --cuda-device 1
 
+python zipserv_kvcache_framework/decompress_framework.py \
+  --input kvcache_data/narrativeqa_sample_0.safetensors \
+  --manifest zipserv_kvcache_framework/kvcache_data/zipserv_blobs/narrativeqa_sample_0.zipserv_manifest.json \
+  --max-tensors 1 \
+  --cuda-device 1
+
 若将本文件夹单独复制到其他位置，也可直接在文件夹内执行：
 
 python compress_framework.py --input /path/to/your.safetensors --max-tensors 4 --gpus 0
 python roundtrip_framework.py --input /path/to/your.safetensors --max-tensors 1 --cuda-device 0
+python decompress_framework.py --input /path/to/your.safetensors --manifest /path/to/your.zipserv_manifest.json --cuda-device 0
